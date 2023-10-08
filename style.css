@@ -14,7 +14,7 @@ body{
 }
 
 /*Cartao Atras*/
-#card_back{
+#Card_Back{
     background-image: url(Imgs/bg-card-back.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -29,7 +29,7 @@ body{
 }
 
 /*Cartao Frente*/
-#card_front{
+#Card_Front{
     background-image: url(Imgs/bg-card-front.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -60,8 +60,6 @@ body{
 }
 
 
-
-
 @media screen and (orientation: landscape) and (max-width: 1440px) { /* Tela para desktop: paisagem*/
     body{
         background-image: url(Imgs/bg-main-desktop.png);
@@ -69,18 +67,29 @@ body{
         background-position: 0px 0px;
         background-size: auto;
     }
-    #card_front{
+    #Card_Front{
         width: 447px;
         height: 245px;
         margin-top: 10%;
         margin-left: 10%;
     }
-    #card_back{
+    #Card_Back{
         width: 447px;
         height: 245px;
         margin-top: 3%;
         margin-left: 20%;
     }
+
+    /*Formulário com dados*/
+    #Card_Data{
+        width: 30%;
+        color:hsl(279, 6%, 55%);
+        float: right;
+        box-sizing: border-box;
+        display:flex;
+        flex-direction: column;
+    } 
+    
 }
 
 @media screen and (orientation: portrait) { /* Tela para mobile: retrato */
@@ -90,7 +99,7 @@ body{
         background-position: 0px 0px;
         background-size: 100% auto;
     }
-    #card_front{
+    #Card_Front{
         width: 300px;
         height: 164.4px;
         margin-top: 30%;
@@ -102,10 +111,19 @@ body{
     #NameAndDate{
         font-size: x-small;
     }
-    #card_back{
+    #Card_Back{
         width: 300px;
         height: 164.4px;
         margin-top: -60%;
         margin-left: 20%;
     }
+    /*Formulário com dados*/
+    #Card_Data{
+        width: 30%;
+        color:hsl(279, 6%, 55%);
+        box-sizing: border-box;
+        display:flex;
+        flex-direction: column;
+     }
+   
 }

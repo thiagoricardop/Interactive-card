@@ -17,7 +17,7 @@
   </style-->
 </head>
 <body>
-  <div id="card_front">
+  <div id="Card_Front">
     <p id="favicon">
       <img id="Card_Logo" src="Imgs/favicon-32x32.png">
     </p>
@@ -28,8 +28,29 @@
     </div>
   </div>
 
-  <div id="card_back">
+  <div id="Card_Back">
     <p id="cvc" > 000 </p>
+  </div>
+
+  <div id="Card_Data">
+    <label for="Cardholder_Name"> CARDHOLDER NAME </label>
+    <input type="text" name="Cardholder_Nam" id="Cardholder_Nam">
+
+    <label for="Card_num"> CARD NUMBER </label><!-- podemos colocar um limite para a escolha do número - Exemplo: para idade de 1 a 122 anos-->
+    <input type="number" name="Card_numero" id="Card_numero" min="1" max="9999999999999999">
+    
+    <label for="Exp_Date"> EXP. DATE (MM/YY) </label>
+      
+    <div>
+      <input type="number" name="Exp_Date" id="MM" min="1" max="12">
+      <input type="number" name="Exp_Date" id="YY" min="1" max="99">
+    </div>
+
+    <label for="CVC"> CVC </label>
+    <input type="number" name="CVC" id="CVC" min="0" max="999">
+    
+    <button type="submit"> Confirm </button> 
+   
   </div>
   
   <!--
