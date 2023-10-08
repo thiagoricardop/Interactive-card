@@ -1,0 +1,72 @@
+@font-face { /*Inserir uma fonte nova*/
+    font-family: SpaceGrotesk ;
+    src: url("Font/SpaceGrotesk-Medium.ttf") format("truetype");
+    font-style: normal;
+}
+
+body{
+    margin: 0px;
+    box-sizing: border-box; /*Não alterar o valores das proporções com a borda ou pading*/
+    height: auto;
+    width: auto;
+    background-color: hsl(0, 0%, 100%) ; /* White */
+    font-family: "SpaceGrotesk"; /*Definir fonte padrão do body*/
+}
+#card_front{
+    background-image: url(Imgs/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: hsl(0, 0%, 100%) ;
+    padding: 2%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+}
+#favicon{
+    height: 65%;
+}
+#Num{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    letter-spacing: 5px;
+}
+#NameAndDate{
+    height: 20%;
+    display:flex;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    justify-content:space-between;
+}
+
+@media screen and (orientation: landscape) and (max-width: 1440px) { /* Tela para desktop: paisagem*/
+    body{
+        background-image: url(Imgs/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        background-size: auto;
+    }
+    #card_front{
+        width: 447px;
+        height: 245px;
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (orientation: portrait) { /* Tela para mobile: retrato */
+    body{
+        background-image: url(Imgs/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        background-size: 100% auto;
+    }
+    #card_front{
+        width: 447px;
+        height: 245px;
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+}
