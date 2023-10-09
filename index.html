@@ -34,27 +34,22 @@
 
   <div id="Card_Data">
     <form id="cardData" name="cardData" action="#">
-        <label for="Cardholder_Name"> CARDHOLDER NAME </label>
-        <br>
-        <input type="text" name="Cardholder_Nam" id="Cardholder_Nam" placeholder="e.g. Jane Appleseed" required>
+        <label for="Cardholder_Name"> CARDHOLDER NAME </label><br>
+        <input type="text" name="Cardholder_Nam" id="Cardholder_Nam" placeholder="e.g. Jane Appleseed" oninput="updateName()" required>
         <br>
     
-        <label for="Card_num"> CARD NUMBER </label>
-        <br>
-        <input type="number" name="Card_numero" placeholder="e.g. 1234 5678 9123 0000" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+        <label for="Card_num"> CARD NUMBER </label><br>
+        <input type="number" name="Card_numero" id="Card_num" placeholder="e.g. 1234 5678 9123 0000" oninput="updateNumber()" required>
         <br>
         
-        <label for="Exp_Date"> EXP. DATE (MM/YY) </label>
-        <br>
-          
+        <label for="Exp_Date"> EXP. DATE (MM/YY) </label><br>
         <div>
           <input type="number" name="Exp_Date" id="MM" min="1" max="12" placeholder="MM" required>
           <input type="number" name="Exp_Date" id="YY" min="1" max="99" placeholder="YY" required>
         </div>
         <br>
     
-        <label for="CVC"> CVC </label>
-        <br>
+        <label for="CVC"> CVC </label><br>
         <input type="number" name="CVC" id="CVC" min="0" max="999" placeholder="e.g. 123" required>
         <br>
     
@@ -62,6 +57,22 @@
     </form>
   </div>
   
+  <div>
+    <p>O nome digitado é: <span id="updatedName"></span></p>
+    <p>O numero digitado é: <span id="updatedNumber"></span></p>
+  </div>
+
+  <script>
+    function updateName() {
+        var name = document.getElementById('Cardholder_Nam').value;   // get input value
+        document.getElementById('updatedName').textContent = name;   // update text
+    }
+    function updateNumber() {
+        var number = document.getElementById('Card_num').value;   // get input value
+        document.getElementById('updatedNumber').textContent = number;   // update text
+    }
+  </script>
+
   <!--
     0000 0000 0000 0000
   Jane Appleseed
