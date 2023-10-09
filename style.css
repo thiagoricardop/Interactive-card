@@ -13,6 +13,10 @@ body{
     font-family: "SpaceGrotesk"; /*Definir fonte padrão do body*/
 }
 
+p {
+    color: aliceblue;
+}
+
 /*Cartao Atras*/
 #Card_Back{
     background-image: url(Imgs/bg-card-back.png);
