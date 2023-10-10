@@ -46,7 +46,7 @@ p {
     color: white;
     position: relative;
     left: 150px;
-    top: -28px;
+    top: -18px;
     letter-spacing: 3px;
 }
 
@@ -182,6 +182,7 @@ form {
 
     /*Formulário com dados*/
     #Card_Data{
+        margin-top: -500px;
         width: 30%;
         color:hsl(279, 6%, 55%);
         float: right;
@@ -254,6 +255,14 @@ form {
         box-sizing: border-box;
         display:flex;
         flex-direction: column;
+        margin-top: 20%;
+        margin-left: 20%;
+        font-size: xx-small;
      }
-   
+     #cvc{
+        left: 100px;
+        top: 20px;
+        letter-spacing: 3px;
+    }
+    
 }
