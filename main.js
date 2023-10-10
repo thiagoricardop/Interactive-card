@@ -1,6 +1,10 @@
 function updateName() {
     var name = document.getElementById('Cardholder_Nam').value;   // get input value
-    document.getElementById('updatedName').textContent = name;   // update text
+    if (name == undefined) {
+        document.getElementById('updatedName').textContent = "Jane Apleseed";
+    } else {
+        document.getElementById('updatedName').textContent = name;   // update text
+    }
 }
 function updateNumber() {
     var number = document.getElementById('Card_num').value;   // get input value
@@ -27,16 +31,8 @@ function formatCardNumber(inputValue) {
     document.querySelector(".card-num-error").textContent = "";
   }
 
-  function validateForm(event) {
-    event.preventDefault();
-
-    var name = document.getElementById('Cardholder_Nam');
-    var cardNumber = document.getElementById('Card_num');
-    var expMonth = document.getElementById('CardDate_month');
-    var expYear = document.getElementById('CardDate_year');
-    var cvc = document.getElementById('Card_cvc');
-
-    // Initialize error messages to empty
+// Function to display error messages
+function displayErrorMessages() {
     var nameError = document.querySelector('.card-name-error');
     var cardNumError = document.querySelector('.card-num-error');
     var expMonthError = document.querySelector('.exp-month-error');
@@ -48,6 +44,12 @@ function formatCardNumber(inputValue) {
     expMonthError.textContent = '';
     expYearError.textContent = '';
     cvcError.textContent = '';
+
+    var name = document.getElementById('Cardholder_Nam');
+    var cardNumber = document.getElementById('Card_num');
+    var expMonth = document.getElementById('CardDate_month');
+    var expYear = document.getElementById('CardDate_year');
+    var cvc = document.getElementById('Card_cvc');
 
     if (name.value.trim() === '') {
         nameError.textContent = 'Name cannot be blank';
@@ -69,3 +71,12 @@ function formatCardNumber(inputValue) {
         cvcError.textContent = 'CVC must be between 0 and 999';
     }
 }
+
+function validateForm(event) {
+    event.preventDefault();
+    displayErrorMessages(); // Call the function to display error messages
+}
+
+// Attach the submit event listener to the form
+var form = document.getElementById('cardData');
+form.addEventListener('submit', validateForm);
