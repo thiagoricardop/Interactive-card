@@ -6,13 +6,10 @@ function updateNumber() {
     var number = document.getElementById('Card_num').value;   // get input value
     document.getElementById('updatedNumber').textContent = number;   // update text
 }
-function updateDateMonth() {
-    var number = document.getElementById('CardDate_month').value;   // get input value
-    document.getElementById('updatedDateMonth').textContent = number;   // update text
-}
-function updateDateYear() {
-    var number = document.getElementById('CardDate_year').value;   // get input value
-    document.getElementById('updatedDateYear').textContent = number;   // update text
+function updateDate() {
+    var number_month = document.getElementById('CardDate_month').value;   
+    var number_year = document.getElementById('CardDate_year').value; 
+    document.getElementById('updatedDate').textContent = number_month + "/" + number_year;   
 }
 function updateCVC() {
     var number = document.getElementById('Card_cvc').value;   // get input value
@@ -29,50 +26,44 @@ function formatCardNumber(inputValue) {
   
     document.querySelector(".card-num-error").textContent = "";
   }
-  
-
 
   function validateForm(event) {
     event.preventDefault();
-
-    const cardName = document.getElementById("Cardholder_Nam").value.trim();
-    const cardNumber = document.getElementById("Card_num").value.trim();
-    const expMonth = document.getElementById("CardDate_month").value.trim();
-    const expYear = document.getElementById("CardDate_year").value.trim();
-    const cvc = document.getElementById("Card_cvc").value.trim();
-
-    // Clear previous error messages
-    const errorElements = document.querySelectorAll(".error");
-    errorElements.forEach((element) => {
-        element.textContent = "";
-    });
-
-    const cardNumberRegex = /^\d{16}$/;
-    const expMonthRegex = /^(0[1-9]|1[0-2])$/;
-    const expYearRegex = /^\d{2}$/;
-
-    if (cardName === "") {
-        document.querySelector("#card-name-error").textContent = "Cardholder Name can't be blank.";
+  
+    var name = document.getElementById('Cardholder_Nam');
+    var cardNumber = document.getElementById('Card_num');
+    var expMonth = document.getElementById('CardDate_month');
+    var expYear = document.getElementById('CardDate_year');
+    var cvc = document.getElementById('Card_cvc');
+  
+    if (name.value.trim() === '') {
+      document.querySelector('.card-name-error').textContent = 'Name cannot be blank';
+    } else {
+      document.querySelector('.card-name-error').textContent = '';
     }
-    if (!cardNumberRegex.test(cardNumber)) {
-        document.querySelector("#card-num-error").textContent = "Invalid Card Number format.";
+  
+    if (cardNumber.value.trim() === '' || cardNumber.value.length !== 16) {
+      document.querySelector('.card-num-error').textContent = 'Card number must be 16 digits';
+    } else {
+      document.querySelector('.card-num-error').textContent = '';
     }
-    if (!expMonthRegex.test(expMonth) || !expYearRegex.test(expYear)) {
-        document.querySelector("#exp-month-error").textContent = "Invalid Expiration Date format.";
+  
+    if (expMonth.value.trim() === '' || expMonth.value < 1 || expMonth.value > 12) {
+      document.querySelector('.exp-month-error').textContent = 'Expiry month must be between 1 and 12';
+    } else {
+      document.querySelector('.exp-month-error').textContent = '';
     }
-    if (cvc === "") {
-        document.querySelector("#cvc-error").textContent = "CVC can't be blank.";
+  
+    if (expYear.value.trim() === '' || expYear.value < 0 || expYear.value > 99) {
+      document.querySelector('.exp-year-error').textContent = 'Expiry year must be between 0 and 99';
+    } else {
+      document.querySelector('.exp-year-error').textContent = '';
     }
-
-    // If all fields are filled and in the correct format, you can proceed with form submission or other actions
-    if (
-        cardName !== "" &&
-        cardNumberRegex.test(cardNumber) &&
-        expMonthRegex.test(expMonth) &&
-        expYearRegex.test(expYear) &&
-        cvc !== ""
-    ) {
-        // Perform form submission or other actions here
-        alert("Form submitted successfully!");
+  
+    if (cvc.value.trim() === '' || cvc.value < 0 || cvc.value > 999) {
+      document.querySelector('.cvc-error').textContent = 'CVC must be between 0 and 999';
+    } else {
+      document.querySelector('.cvc-error').textContent = '';
     }
-}
+  }
+  
