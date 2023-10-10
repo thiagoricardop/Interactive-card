@@ -17,6 +17,19 @@ p {
     color: aliceblue;
 }
 
+.dot2 {
+  display: inline-block;
+  z-index: 10;
+  left: 4%;
+  top: -15%;
+  position: relative;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  border: 1px solid white;
+}
+
+
 /*Cartao Atras*/
 #Card_Back{
     background-image: url(Imgs/bg-card-back.png);
@@ -30,6 +43,10 @@ p {
     justify-content: space-evenly;
 }
 #cvc{
+    color: white;
+    position: relative;
+    left: 150px;
+    top: -10px;
 }
 
 /*Cartao Frente*/
@@ -63,7 +80,38 @@ p {
     justify-content:space-between;
 }
 
+@media screen and (orientation: landscape) and (max-width: 2000px) { /* Tela para desktop: paisagem*/
+    body{
+        background-image: url(Imgs/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        background-size: auto;
+        height: max-content;
+    }
+    #Card_Front{
+        width: 447px;
+        height: 245px;
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    #Card_Back{
+        width: 447px;
+        height: 245px;
+        margin-top: 3%;
+        margin-left: 20%;
+    }
 
+    /*Formulário com dados*/
+    #Card_Data{
+        width: 30%;
+        color:hsl(279, 6%, 55%);
+        float: right;
+        box-sizing: border-box;
+        display:flex;
+        flex-direction: column;
+    } 
+    
+}
 @media screen and (orientation: landscape) and (max-width: 1440px) { /* Tela para desktop: paisagem*/
     body{
         background-image: url(Imgs/bg-main-desktop.png);
@@ -96,7 +144,7 @@ p {
     
 }
 
-@media screen and (orientation: portrait) { /* Tela para mobile: retrato */
+@media screen and (orientation: portrait) and (max-width: 600px) { /* Tela para mobile: retrato */
     body{
         background-image: url(Imgs/bg-main-mobile.png);
         background-repeat: no-repeat;

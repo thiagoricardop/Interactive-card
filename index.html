@@ -20,6 +20,8 @@
   <div id="Card_Front">
     <p id="favicon">
       <img id="Card_Logo" src="Imgs/favicon-32x32.png">
+      <span class="dot"></span>
+      <span class="dot2"></span>
     </p>
     <p id="Num"> 0000 0000 0000 0000 </p>
     <div id= "NameAndDate">
@@ -62,50 +64,20 @@
     <p>O numero digitado é: <span id="updatedNumber"></span></p>
   </div>
 
-  <script>
-    function updateName() {
-        var name = document.getElementById('Cardholder_Nam').value;   // get input value
-        document.getElementById('updatedName').textContent = name;   // update text
-    }
-    function updateNumber() {
-        var number = document.getElementById('Card_num').value;   // get input value
-        document.getElementById('updatedNumber').textContent = number;   // update text
-    }
-  </script>
-
-  <!--
-    0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm 
-  -->
+  <script src="./main.js"></script>
 
   <!-- Completed state start -->
-  <!--
-  Thank you!
-  We've added your card details
-  Continue
+  <section class="hide">
+    <img src="./images/icon-complete.svg" alt="">
+    <h1>Thank you!</h1>
+    <p> We've added your card details  </p>
+    <button>Continue</button>
+  </section>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>  
-  -->
+
 </body>
 </html>
