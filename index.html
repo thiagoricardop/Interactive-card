@@ -22,8 +22,8 @@
     <span id="updatedNumber"></span></p>
     <div id= "NameAndDate">
       <p><span id="updatedName"></span></p>
-      <p><span id="updatedDateMonth"></span></p>
-      <p><span id="updatedDateYear"></span></p>
+      <p><span id="updatedDateMonth"></span>
+      <span id="updatedDateYear"></span></p>
     </div>
   </div>
 
@@ -33,26 +33,31 @@
 
   <div id="Card_Data">
     <form id="cardData" name="cardData" action="#">
-        <label for="Cardholder_Name"> CARDHOLDER NAME </label><br>
-        <input type="text" name="Cardholder_Nam" id="Cardholder_Nam" placeholder="e.g. Jane Appleseed" oninput="updateName()" required>
-        <br>
-    
-        <label for="Card_num"> CARD NUMBER </label><br>
-        <input type="number" name="Card_numero" id="Card_num" placeholder="e.g. 1234 5678 9123 0000" oninput="updateNumber()" required>
-        <br>
-        
-        <label for="Exp_Date"> EXP. DATE (MM/YY) </label><br>
-        <div>
-          <input type="number" name="Exp_Date" id="CardDate_month" min="1" max="12" placeholder="MM" oninput="updateDateMonth()" required>
-          <input type="number" name="Exp_Date" id="CardDate_year" min="1" max="99" placeholder="YY" oninput="updateDateYear()" required>
-        </div>
-        <br>
-    
-        <label for="CVC"> CVC </label><br>
-        <input type="number" name="CVC" id="Card_cvc" min="0" max="999" placeholder="e.g. 123" oninput="updateCVC()" required>
-        <br>
-    
-        <button type="submit"> Confirm </button> 
+      <label for="Cardholder_Name"> CARDHOLDER NAME </label><br>
+      <input type="text" name="Cardholder_Nam" id="Cardholder_Nam" placeholder="e.g. Jane Appleseed" oninput="updateName()">
+      <p class="error card-name-error"></p>
+      <br>
+
+      <label for="Card_num"> CARD NUMBER </label><br>
+      <input type="text" name="Card_numero" id="Card_num" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" oninput="formatCardNumber(this.value)">
+      <p class="error card-num-error"></p>
+      <br>
+      
+      <label for="Exp_Date"> EXP. DATE (MM/YY) </label><br>
+      <div>
+        <input type="number" name="Exp_Date" id="CardDate_month" min="1" max="12" placeholder="MM" oninput="updateDateMonth()" required>
+        <p class="error exp-month-error"></p>
+        <input type="number" name="Exp_Date" id="CardDate_year" min="1" max="99" placeholder="YY" oninput="updateDateYear()" required>
+        <p class="error exp-year-error"></p>
+      </div>
+      <br>
+  
+      <label for="CVC"> CVC </label><br>
+      <input type="number" name="CVC" id="Card_cvc" min="0" max="999" placeholder="e.g. 123" oninput="updateCVC()" required>
+      <p class="error cvc-error"></p>
+      <br>
+  
+      <button type="submit"> Confirm </button> 
     </form>
   </div>
   

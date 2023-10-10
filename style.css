@@ -29,6 +29,13 @@ p {
   border: 1px solid white;
 }
 
+.error {
+    color: hsl(0, 100%, 66%);
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+  }
+  
 
 /*Cartao Atras*/
 #Card_Back{
@@ -55,15 +62,19 @@ p {
     background-repeat: no-repeat;
     background-size: 100%;
     color: hsl(0, 0%, 100%) ;
-    padding: 2%;
+    padding: 3%;
     overflow: hidden;
     box-sizing: border-box;
     display:flex;
     flex-direction: column;
 }
+#updatedNumber {
+    font-size: 25px; /* Adjust the font size as needed */
+    letter-spacing: 4px; /* Adjust the letter spacing as needed */
+}
+
 #favicon{
-    height: 65%;
-    padding-left: 5%;
+    height: 80%;
 }
 #Num{
     height: 15%;
@@ -77,8 +88,32 @@ p {
     display:flex;
     text-transform: uppercase;
     letter-spacing: 2px;
-    justify-content:space-between;
+    justify-content: space-between;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border: none;
+  }
 
 @media screen and (orientation: landscape) and (max-width: 2000px) { /* Tela para desktop: paisagem*/
     body{
