@@ -16,7 +16,7 @@
   <div id="Card_Front">
     <p id="favicon">
       <img id="Card_Logo" src="Imgs/favicon-32x32.png">
-      <span class="dot"></span>
+      
       <span class="dot2"></span>
     </p>
     <span id="updatedNumber"></span></p>
@@ -30,9 +30,6 @@
   <div id="Card_Back">
     <p><span id="updatedCVC"></span></p>
   </div>
-
-
-
 
   <div id="Card_Data">
     <form id="cardData" name="cardData" action="#">
@@ -62,39 +59,7 @@
 
 
 
-  <script>
-    function updateName() {
-        var name = document.getElementById('Cardholder_Nam').value;   // get input value
-        document.getElementById('updatedName').textContent = name;   // update text
-    }
-    function updateNumber() {
-        var number = document.getElementById('Card_num').value;   // get input value
-        document.getElementById('updatedNumber').textContent = number;   // update text
-    }
-  </script>
-
-  <!--
-    0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm 
-  -->
+  <script src="./main.js"></script>
 
   <!-- Completed state start -->
   <!--
