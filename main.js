@@ -29,41 +29,43 @@ function formatCardNumber(inputValue) {
 
   function validateForm(event) {
     event.preventDefault();
-  
+
     var name = document.getElementById('Cardholder_Nam');
     var cardNumber = document.getElementById('Card_num');
     var expMonth = document.getElementById('CardDate_month');
     var expYear = document.getElementById('CardDate_year');
     var cvc = document.getElementById('Card_cvc');
-  
+
+    // Initialize error messages to empty
+    var nameError = document.querySelector('.card-name-error');
+    var cardNumError = document.querySelector('.card-num-error');
+    var expMonthError = document.querySelector('.exp-month-error');
+    var expYearError = document.querySelector('.exp-year-error');
+    var cvcError = document.querySelector('.cvc-error');
+
+    nameError.textContent = '';
+    cardNumError.textContent = '';
+    expMonthError.textContent = '';
+    expYearError.textContent = '';
+    cvcError.textContent = '';
+
     if (name.value.trim() === '') {
-      document.querySelector('.card-name-error').textContent = 'Name cannot be blank';
-    } else {
-      document.querySelector('.card-name-error').textContent = '';
+        nameError.textContent = 'Name cannot be blank';
     }
-  
+
     if (cardNumber.value.trim() === '' || cardNumber.value.length !== 16) {
-      document.querySelector('.card-num-error').textContent = 'Card number must be 16 digits';
-    } else {
-      document.querySelector('.card-num-error').textContent = '';
+        cardNumError.textContent = 'Card number must be 16 digits';
     }
-  
+
     if (expMonth.value.trim() === '' || expMonth.value < 1 || expMonth.value > 12) {
-      document.querySelector('.exp-month-error').textContent = 'Expiry month must be between 1 and 12';
-    } else {
-      document.querySelector('.exp-month-error').textContent = '';
+        expMonthError.textContent = 'Expiry month must be between 1 and 12';
     }
-  
+
     if (expYear.value.trim() === '' || expYear.value < 0 || expYear.value > 99) {
-      document.querySelector('.exp-year-error').textContent = 'Expiry year must be between 0 and 99';
-    } else {
-      document.querySelector('.exp-year-error').textContent = '';
+        expYearError.textContent = 'Expiry year must be between 0 and 99';
     }
-  
+
     if (cvc.value.trim() === '' || cvc.value < 0 || cvc.value > 999) {
-      document.querySelector('.cvc-error').textContent = 'CVC must be between 0 and 999';
-    } else {
-      document.querySelector('.cvc-error').textContent = '';
+        cvcError.textContent = 'CVC must be between 0 and 999';
     }
-  }
-  
+}
